@@ -1,0 +1,15 @@
+.Nav {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border: 10px;
+
+}
+
+.sub {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}

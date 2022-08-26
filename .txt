@@ -1,0 +1,10 @@
+Cuando creamos componentes de tipo clase
+necesitamos usar el keyboard class
+ademas necesitamos usar la funcion render () {}
+para devolver el jsx
+
+// Para crear nuestro state: debemos tener un metodo constructor() y llamar a super()
+// this.state = { age: 18, name: "Mauro", city: "Tucuman" }
+// Para actualizar un state debemos utilizar el metodo setState()
+// Debemos tener presente el uso de la palabra reservada this, que hace referencia a la clase
+
