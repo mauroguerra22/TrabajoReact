@@ -11,3 +11,18 @@
 h2 {
     color:  white;
 }
+
+.center {
+    border-radius: 30px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 38vh;
+}
+
+.ic {
+    font-size: 110%;
+}

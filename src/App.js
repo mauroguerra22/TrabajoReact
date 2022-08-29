@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header/Header';
 /* import CardComponent from './components/CardComponent/CardComponent'; */
 import NavBar from './components/NavBar/NavBar';
+import ItemCount from './components/ItemCount/ItemCount';
 
 
 class App extends Component {

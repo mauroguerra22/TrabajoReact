@@ -8,3 +8,129 @@ para devolver el jsx
 // Para actualizar un state debemos utilizar el metodo setState()
 // Debemos tener presente el uso de la palabra reservada this, que hace referencia a la clase
 
+Para instalar todos lso componenetes siempre debemso ingresar en el termina npm istall
+
+****************************************************************************
+
+componentes de clase => eran los unicos qeu podian tener un state 
+la fubncion que me permite modificar el estado dentro de componentesde tipo clase, es la funcion setState()
+
+foo = () => {
+    this.setState();
+};
+
+handlerCounterUp = () => {
+    this.setState({ counter: this.state.counter + 1})
+};
+
+handlerCounterUp = () => {
+    this.setState({ counter: this.state.counter - 1})
+};
+
+handlerCounterUp = () => {
+    this.setState({ name: 'Mauro'});
+};
+
+
+//counter: es un objeto de tipo contador
+
+en componentes de tipo clase, es mandatoria el uso de this para el accsero
+a propiedades dentro del state, y para el llamado a metodos. Por ejemplo: onClick=
+{this.foo}
+
+En su monento, el estado y lo que se refiere a ciclos de vida, pertenecian solo
+a los componentes de tipo clase.
+
+Los componentes funcionales, no tenain posibilidad de acceder a estados, ni tampoco, podian tener ciclvos
+de vida dentro.
+
+Los componentes funcionales estaban limitados a renderizar JSX.
+
+Pero eso cmabio a partir de la posibilidad de usar HOOKS 16.8 
+
+
+///////codesandbox clase componetes II
+
+class App exetends React.Component {
+    
+    constructor () {
+        console.log("CONSTRUCTOR")
+        super();
+
+        this.state= {
+            name: "Pablo"
+        };
+    }
+
+    onHandlerChangeState = () => {
+        this.setState({ name: "Julia" });
+    };
+
+    componentWillMount() {
+        console.log("COMPONENT WILL MOUNT");
+        // FETCH A API
+    };
+    
+    componentDidMount () {
+        setTimeout (() => {
+            console.log("COMPONENT DID MOUNT");
+     }, 2000);
+    }
+
+    componentDidUpdate() {
+        console.log("COMPONENT DID UPDATE");
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <h1>Ciclos de Vida</h1>
+                <p>{this.state.name}</p>
+                <button onClick={HandlerChangeState}>Cambiar state</button>
+
+            </div>
+        );
+    }
+}   
+
+///
+Cuando trabajamos con componentes de tipo funcion ya no es 
+necesario ocupar class
+
+
+//Name es el nombre de mi estado 
+//setname = es la funcion que me permite modificar mi estado
+//( ) => Es el valor de mi state (EN ESTE CASO ,DE NAME)
+
+import React, {useState} from "react";
+
+const App = () => {
+    const [name, setName] = React.useState("Mauro");
+    cosnt [counter, setCounter] = React.useState(0);
+    
+    const handlerCounterUp = () => {
+        setCounter(counter + 1);
+        alert("hello");
+    };
+
+//USEEFFECT => Acepta un callback, y un array de dependencias componenetes
+//como segundo parametro
+    useEffect {() =>  {
+        console.log("MI COMPONENTE HA SIDO MONTADO");
+        console.log(counter);
+    }, []};
+
+
+    return(
+        <div>
+        <h1>Componentes Funcionales</h1>
+        <p>{name}</p>
+        <button onClick={() => setName("Sebastian")}>Modificar Nombre</button></button>
+        <p>{counter}</p>
+        <button onClick={handlerCounterUp}></button>
+        <button onClick={() => setCounter(counter + 1)}>-</button>        
+        </div>
+    )
+};
+
+export default App;

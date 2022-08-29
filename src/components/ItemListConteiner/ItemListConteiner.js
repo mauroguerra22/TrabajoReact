@@ -5,6 +5,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemListConteiner = (props) => {
   const [open, setOpen] = React.useState(false);
@@ -41,6 +42,7 @@ const ItemListConteiner = (props) => {
           <Button onClick={handleClose} autoFocus>Cerrar</Button>
         </DialogActions>
       </Dialog>
+      <ItemCount/>
     </div>
   );
 }
