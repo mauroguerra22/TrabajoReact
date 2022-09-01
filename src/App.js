@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 /* import CardComponent from './components/CardComponent/CardComponent'; */
 import NavBar from './components/NavBar/NavBar';
 import ItemCount from './components/ItemCount/ItemCount';
+import CardComponent from './components/CardComponent/CardComponent';
 
 
 class App extends Component {
@@ -23,12 +24,10 @@ class App extends Component {
       // handlerCounterUp() {
       // this.setState ({ counter: this.state.counter + 1});
       // }
-
       //2da Opcion, aplicando arrow function, no tenemos qeu aplicar bind en el metodo constructor
 
     }
   
-
     handlerCounterUp = () => {
       this.setState({counter: this.state.counter + 1})
     }
@@ -37,10 +36,6 @@ class App extends Component {
       this.setState({counter: this.state.counter - 1})
     }
 
-
-
-
-
   render () {
     return (
       <div>
@@ -48,21 +43,15 @@ class App extends Component {
           <NavBar/>
         </div>
         <Header />
-       {/*  <div className='UserSection'>
+       {<div className='UserSection'>
             <CardComponent 
-              name='Ares'
-              date='Se unio en Junio 2022'
-              description='Lorem'
-              img='https://st.depositphotos.com/2044631/2014/i/950/depositphotos_20146623-stock-photo-tigers-face.jpg' 
+              name='Creatina'
+              date='Ingresa el 2022'
+              description='Creatine monohidrate es 100% pura creatina micronizada de máxima absorción. Ideal para quienes buscan aumentar y recuperar masa muscular después de intensos entrenamiento de pesas.'
+              img='https://d22fxaf9t8d39k.cloudfront.net/f953455d41fd7006f87b8d151826ee5c42c673a7bfb5c2efb91aa1bf8dfbef2a30102.png' 
               />   
-        </div>
-        <div className='CounterSection'>
-          <p>Counter: {this.state.counter}</p>
-          <div className='btn-section'>
-            <button onClick={this.handlerCounterUp}>Incremetar</button>
-            <button onClick={this.handlerCounterDown}>Decrementar</button>
-          </div>
-        </div> */}
+            </div>
+        }
       </div>
     )
   }

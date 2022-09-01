@@ -6,6 +6,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import ItemCount from '../ItemCount/ItemCount';
+import ItemList from '../ItemListConteiner/ItemList';
+import CardComponent from '../CardComponent/CardComponent';
 
 const ItemListConteiner = (props) => {
   const [open, setOpen] = React.useState(false);
@@ -43,6 +45,7 @@ const ItemListConteiner = (props) => {
         </DialogActions>
       </Dialog>
       <ItemCount/>
+      <ItemList/>
     </div>
   );
 }
