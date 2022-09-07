@@ -4,26 +4,28 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import ItemList from '../ItemListConteiner/ItemList';
 
 
-const CardComponent = ({data}) => {
+
+const ItemDetailContainer = ({ users }) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
+        <Typography gutterBottom variant="h5" component="div">
+          {users.title}
+        </Typography>
         <CardMedia
           component="img"
-          image={data.hdurl}
+          image={users.hdurl}
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-          {data.tittle}
+          <Typography variant="body2" color="text.secondary">
+           {users.explanation}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-           Descripcion:{data.explanation}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-           {data.date}
+           {users.date}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -31,4 +33,4 @@ const CardComponent = ({data}) => {
   );
 }
 
-export default CardComponent;
+export default ItemDetailContainer;

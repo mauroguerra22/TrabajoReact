@@ -1,6 +1,6 @@
-import { Alert } from "@mui/material";
+/* import { Alert } from "@mui/material"; */
 import React, { useState } from "react";
-import Header from "../Header/Header.css";
+/* import Header from "../Header/Header.css"; */
 
 const ItemCount = () => {
     const [name, setName] = useState("Proteina");

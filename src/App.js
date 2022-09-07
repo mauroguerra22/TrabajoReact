@@ -1,60 +1,48 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
-//Components 
-import Header from './components/Header/Header';
+
+  //Components 
+
+/* import Header from './components/Header/Header'; */
 /* import CardComponent from './components/CardComponent/CardComponent'; */
 import NavBar from './components/NavBar/NavBar';
-import ItemCount from './components/ItemCount/ItemCount';
+/* import ItemCount from './components/ItemCount/ItemCount'; */
 import CardComponent from './components/CardComponent/CardComponent';
+import ItemCount from './components/ItemCount/ItemCount';
+/* import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer' */
+/* import Spinner from './components/CardComponent/Spinner'; */
 
 
-class App extends Component {
-  constructor() {
-    super() 
+const App = () => {
+   const [data, setData] = useState ({});
 
-    this.state = {
-        counter: 0,
-      };
-
-      //Bind apply call js (Ver video)
-      this.handlerCounterUp = this.handlerCounterUp.bind(this);
-
-      //1era Opcion, sin usar arrow function, tenemos que aplicar bind en el metodo constructor
-      // handlerCounterUp() {
-      // this.setState ({ counter: this.state.counter + 1});
-      // }
-      //2da Opcion, aplicando arrow function, no tenemos qeu aplicar bind en el metodo constructor
-
-    }
+    useEffect(() => {
+      fetch('https://api.nasa.gov/planetary/apod?api_key=yd5oC0qrC72u5p6WJIKrdApvvdVOrdSd1lzdugLQ')
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+    });
   
-    handlerCounterUp = () => {
-      this.setState({counter: this.state.counter + 1})
-    }
 
-    handlerCounterDown = () => {
-      this.setState({counter: this.state.counter - 1})
-    }
-
-  render () {
-    return (
+return (
       <div>
         <div className='Nav'>
           <NavBar/>
         </div>
-        <Header />
+
        {<div className='UserSection'>
             <CardComponent 
               name='Creatina'
               date='Ingresa el 2022'
               description='Creatine monohidrate es 100% pura creatina micronizada de máxima absorción. Ideal para quienes buscan aumentar y recuperar masa muscular después de intensos entrenamiento de pesas.'
               img='https://d22fxaf9t8d39k.cloudfront.net/f953455d41fd7006f87b8d151826ee5c42c673a7bfb5c2efb91aa1bf8dfbef2a30102.png' 
-              />   
-            </div>
+              /><CardComponent data={data}/>
+        </div>
         }
+        <ItemCount/>
       </div>
     )
   }
-}
 
 export default App;
+

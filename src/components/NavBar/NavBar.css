@@ -4,6 +4,7 @@
     align-items: center;
     border: 10px;
 
+
 }
 
 .sub {
@@ -13,3 +14,10 @@
     align-items: center;
     
 }
+
+.but {
+    color: black;
+    margin-top: 10px;
+    align-items: flex-start;
+} 
+

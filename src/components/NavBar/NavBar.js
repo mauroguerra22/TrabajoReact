@@ -4,14 +4,17 @@ import Stack from '@mui/material/Stack';
 import CardWidget from '../CardWidget/CardWidget';
 import ItemListConteiner from '../ItemListConteiner/ItemListConteiner';
 import './NavBar.css';
+import Header from '../Header/Header';
+
 
 const NavBar = () => {
   return (
-    <div className='Nav'>
-    <Stack direction="row" spacing={2}>
-      <Button variant="outlined">Inicio</Button>
-      <Button variant="outlined">Contacto</Button>
-      <Button variant="outlined" href="#outlined-buttons">Youtube</Button>
+    <div >
+    <Stack /* direction="row" */ spacing={2}>
+      <Button className='but'  variant="outlined" >Inicio</Button>
+      <Button className='but'  variant="outlined" >Contacto</Button>
+      <Button className='but'  variant="outlined"  href="#outlined-buttons">Youtube</Button>
+      <Header/>
       <CardWidget/>
     </Stack>
     <h3 className='sub'>Spartan Suplementos</h3>

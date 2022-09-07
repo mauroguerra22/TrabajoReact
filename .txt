@@ -134,3 +134,12 @@ const App = () => {
 };
 
 export default App;
+
+
+
+   //1era Opcion, sin usar arrow function, tenemos que aplicar bind en el metodo constructor
+      // handlerCounterUp() {
+      // this.setState ({ counter: this.state.counter + 1});
+      // }
+      //2da Opcion, aplicando arrow function, no tenemos qeu aplicar bind en el metodo constructor
+ //Bind apply call js (Ver video)
