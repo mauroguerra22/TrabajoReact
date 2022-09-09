@@ -1,23 +1,19 @@
-.Nav {
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    border: 10px;
-
-
+.Navigation {
+	display: flex;
+	background: #000;
+	min-height: 5vh;
 }
 
-.sub {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    
+ul {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
 }
 
-.but {
-    color: black;
-    margin-top: 10px;
-    align-items: flex-start;
-} 
-
+.Link {
+	color: white;
+	list-style: none;
+	font-size: 20px;
+	text-decoration: none;
+}
