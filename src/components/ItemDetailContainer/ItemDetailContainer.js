@@ -1,31 +1,40 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import ItemList from '../ItemListConteiner/ItemList';
+import axios from 'axios';
 
 
 
-const ItemDetailContainer = ({ users }) => {
+
+const ItemDetailContainer = ()  => {
+  const [data, setData] = useState ({});
+
+  useEffect(() => {
+    axios('https://api.nasa.gov/planetary/apod?api_key=yd5oC0qrC72u5p6WJIKrdApvvdVOrdSd1lzdugLQ')
+    .then(res => setData(res.data))
+  }, []);
+
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
-        <Typography gutterBottom variant="h5" component="div">
-          {users.title}
-        </Typography>
         <CardMedia
           component="img"
-          image={users.hdurl}
-          alt="green iguana"
+          image={data.hdurl}
+          alt=""
         />
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
-           {users.explanation}
+          <Typography gutterBottom variant="h5" component="div">
+          {data.tittle}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-           {users.date}
+           {data.explanation}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+           {data.date}
           </Typography>
         </CardContent>
       </CardActionArea>
