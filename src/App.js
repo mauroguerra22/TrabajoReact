@@ -3,7 +3,6 @@ import './App.css';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
   // Components //
 import Header from './components/Header/Header'; 
 /* import CardComponent from './components/CardComponent/CardComponent'; */
@@ -12,8 +11,11 @@ import NavBar from './components/NavBar/NavBar';
 import ItemCount from './components/ItemCount/ItemCount';
 /* import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer' */
 /* import Spinner from './components/CardComponent/Spinner'; */
-
-  // VIEWS //
+import CardContext from './components/CardContext/CardContext';
+import { ItemsContext, ItemsProvider } from './components/CardContext/ItemsContext';
+import Header2 from './components/Header/Header2';
+  
+// VIEWS //
 import Home from './views/Home/Home';
 import About from './views/About/About';
 import Contact from './views/Contact/Contact';
@@ -26,6 +28,11 @@ const App = () => {
 
 return (
       <div>
+{/*         <ItemsProvider>
+          <div className='App' >
+            <Header2/> 
+          </div>
+        </ItemsProvider> */}
 <Router>
 			<div className='App'>
 				<NavBar />
